@@ -32,10 +32,11 @@ jobs:
         uses: gradle/actions/setup-gradle@v3
 
       - name: Build debug APK
+        working-directory: BankSmsForwarder
         run: gradle assembleDebug --no-daemon
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: ShopVPN-SMS-Forwarder-debug-apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+          path: BankSmsForwarder/app/build/outputs/apk/debug/app-debug.apk
